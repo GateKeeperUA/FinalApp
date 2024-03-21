@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/title_home"
+        android:icon="@drawable/home_selector" />
+
+    <item
+        android:id="@+id/shorts"
+        android:title="@string/title_nfc"
+        android:icon="@drawable/lock_selector" />
+
+</menu>

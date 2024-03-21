@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="azure">#0F79DB</color>
+    <color name="royal_blue">#6070CF</color>
+    <color name="amethyst">#8368C0</color>
+    <color name="purpureus">#9961AF</color>
+    <color name="blue_grotto">#4B7BF5</color>
+    <color name="Cornflower">#79A9F5</color>
+    <color name="baby_blue">#C2E2F5</color>
+    <color name="white_blue">#E0E8FF</color>
+    <color name="trans">#00FFFFFF</color>
+    <color name="grey">#808080</color>
+</resources>
