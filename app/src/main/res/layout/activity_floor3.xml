@@ -48,6 +48,8 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:onClick="enterRoom"/>
+
+
         </LinearLayout>
 
         <LinearLayout

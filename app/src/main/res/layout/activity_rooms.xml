@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,52 +14,56 @@
         android:text="Back"
         android:onClick="back" />
 
-    <TextView
-        android:text = "Temperature"
-        android:textSize="150px"
-        android:gravity="top|center"
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="200px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:columnCount="1">
 
-    <TextView
-        android:id="@+id/temperature_"
-        android:textSize="70px"
-        android:layout_marginTop="400px"
-        android:gravity="top|center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
-    <TextView
-        android:text = "Humidity"
-        android:textSize="150px"
-        android:gravity="center|center"
-        android:layout_marginBottom="150px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <TextView
+            android:text = "Temperature"
+            android:textSize="150px"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/humidity_"
-        android:textSize="70px"
-        android:layout_marginBottom="-150px"
-        android:gravity="center|center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/temperature_"
+            android:textSize="70px"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <TextView
-        android:text = "Quality of air"
-        android:textSize="150px"
-        android:gravity="bottom|center"
-        android:layout_marginBottom="350px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <TextView
+            android:text = "Humidity"
+            android:textSize="150px"
+            android:gravity="center"
+            android:layout_marginTop="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/gas_"
-        android:textSize="70px"
-        android:layout_marginBottom="230px"
-        android:gravity="bottom|center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/humidity_"
+            android:textSize="70px"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text = "Quality of air"
+            android:textSize="150px"
+            android:gravity="center"
+            android:layout_marginTop="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/gas_"
+            android:textSize="70px"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </GridLayout>
 
 </RelativeLayout>
