@@ -21,8 +21,8 @@ public class floor3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_floor3);
+
 
         Button room301 = findViewById(R.id.room301);
         Button room302 = findViewById(R.id.room302);
@@ -73,11 +73,12 @@ public class floor3 extends AppCompatActivity {
         String currentTime = Calendar.getInstance().getTime().toString();
         Log.d("MQTT_Date",currentTime);
 
-        String day = currentTime.substring(0, Math.min(currentTime.length(), 3));
-        String time = currentTime.substring(11,12);
-        Log.d("MQTT_Date",""+Integer.parseInt(time));
+        String day = currentTime.substring(0, 3);
+        int hour = Integer.parseInt(currentTime.substring(11,13));
+        int minute = Integer.parseInt(currentTime.substring(14,16));
+        Log.d("MQTT_Date","Day "+day+" Hour "+hour+" Minute "+minute);
 
-        if(day.equals("Sat") || day.equals("Sun") || Integer.parseInt(time)>=23 || Integer.parseInt(time)<9) {
+            if(day.equals("Sat") || day.equals("Sun") || hour>=23 || (hour==22 && minute>=30) || (hour==20 && minute>=15 && minute<=45) || hour<8 || (hour==8 && minute<30)) {
             room301.setBackgroundColor(Color.RED);
             room302.setBackgroundColor(Color.RED);
             room303.setBackgroundColor(Color.RED);
