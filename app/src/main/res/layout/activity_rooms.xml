@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Rooms">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textSize="20dp"
-        android:layout_margin="4dp"
-        android:text="Back"
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/arrow"
+        android:backgroundTint="@color/azure"
         android:onClick="back" />
 
     <GridLayout
@@ -24,6 +25,7 @@
         <TextView
             android:text = "Temperature"
             android:textSize="150px"
+            android:fontFamily="sans"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -31,6 +33,7 @@
         <TextView
             android:id="@+id/temperature_"
             android:textSize="70px"
+            android:fontFamily="sans"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -38,6 +41,7 @@
         <TextView
             android:text = "Humidity"
             android:textSize="150px"
+            android:fontFamily="sans"
             android:gravity="center"
             android:layout_marginTop="120dp"
             android:layout_width="match_parent"
@@ -46,6 +50,7 @@
         <TextView
             android:id="@+id/humidity_"
             android:textSize="70px"
+            android:fontFamily="sans"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -53,6 +58,7 @@
         <TextView
             android:text = "Quality of air"
             android:textSize="150px"
+            android:fontFamily="sans"
             android:gravity="center"
             android:layout_marginTop="120dp"
             android:layout_width="match_parent"
@@ -61,6 +67,7 @@
         <TextView
             android:id="@+id/gas_"
             android:textSize="70px"
+            android:fontFamily="sans"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

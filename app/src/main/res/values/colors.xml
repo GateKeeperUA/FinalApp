@@ -12,4 +12,6 @@
     <color name="white_blue">#E0E8FF</color>
     <color name="trans">#00FFFFFF</color>
     <color name="grey">#808080</color>
+    <color name="green">#33D864</color>
+    <color name="red">#DE2029</color>
 </resources>

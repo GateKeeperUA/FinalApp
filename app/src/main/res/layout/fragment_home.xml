@@ -5,49 +5,163 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/frag_home"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    android:background="@color/white">
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:alpha="0.45"
+        android:background="@drawable/deti"
+        android:layout_marginTop="50dp"/>
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/DETI"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="DETI"
-        android:textSize="60sp"
-        android:layout_marginTop="80dp"/>
+        android:textSize="70sp"
+        android:alpha="0.8"
+        android:textColor="@color/black"
+        android:layout_marginTop="90dp"/>
 
     <Button
-        android:id="@+id/andar1"
+        android:id="@+id/floor1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="180dp"
-        android:text="1ºandar"
-        android:textColor="@color/black"
-        android:background="@color/white" />
+        android:layout_marginTop="265dp"
+        android:text="1st floor"
+        android:textSize="19sp"
+        android:textColor="@color/white"
+        android:background="@color/azure" />
 
     <Button
-        android:id="@+id/andar2"
+        android:id="@+id/floor2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/andar1"
-        android:layout_marginTop="20dp"
-        android:text="2ºandar"
-        android:textColor="@color/black"
-        android:background="@color/white"/>
+        android:layout_below="@+id/floor1"
+        android:layout_marginTop="10dp"
+        android:text="2nd floor"
+        android:textSize="19sp"
+        android:textColor="@color/white"
+        android:background="@color/azure"/>
 
     <Button
-        android:id="@+id/andar3"
+        android:id="@+id/floor3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/andar2"
-        android:layout_marginTop="20dp"
-        android:text="3ºandar"
-        android:textColor="@color/black"
-        android:background="@color/white"/>
+        android:layout_below="@+id/floor2"
+        android:layout_marginTop="10dp"
+        android:text="3rd floor"
+        android:textSize="19sp"
+        android:textColor="@color/white"
+        android:background="@color/azure"/>
+
+    <Button
+        android:id="@+id/offices"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/floor3"
+        android:layout_marginTop="10dp"
+        android:text="offices"
+        android:textSize="19sp"
+        android:textColor="@color/white"
+        android:background="@color/azure"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="580dp"
+        android:textSize="30dp"
+        android:text="Legend"
+        android:layout_marginLeft="8dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="588dp"
+        android:textSize="20dp"
+        android:text="(for the flors)"
+        android:layout_marginLeft="106dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="580dp"
+        android:textSize="30dp"
+        android:text=":"
+        android:layout_marginLeft="223dp">
+    </TextView>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:layout_marginTop="620dp"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:background="@color/green"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Available"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginLeft="15dp"/>
+
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:background="#FF0000"
+            android:layout_marginHorizontal="100dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Unavailable"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:background="@color/azure"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Available with card"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginLeft="15dp"/>
+
+    </GridLayout>
 
 
 </RelativeLayout>

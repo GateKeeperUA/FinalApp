@@ -1,9 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-
 
     <GridLayout
         android:layout_width="match_parent"
@@ -15,405 +14,309 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:layout_margin="4dp"
-                android:text="Back"
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/arrow"
+                android:backgroundTint="@color/azure"
                 android:onClick="backmain" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room301"
-                android:text = "301"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
-
-            <Button
-                android:id = "@+id/room302"
-                android:text = "302"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
-
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room303"
-                android:text = "303"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room304"
-                android:text = "304"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room301"
+                android:text="301"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room302"
+                android:text="302"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room305"
-                android:text = "305"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room306"
-                android:text = "306"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room303"
+                android:text="303"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room304"
+                android:text="304"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room307"
-                android:text = "307"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room308"
-                android:text = "308"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room305"
+                android:text="305"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room306"
+                android:text="306"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room309"
-                android:text = "309"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room310"
-                android:text = "310"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room307"
+                android:text="307"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room308"
+                android:text="308"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room311"
-                android:text = "311"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room312"
-                android:text = "312"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room309"
+                android:text="309"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room310"
+                android:text="310"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room313"
-                android:text = "313"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room314"
-                android:text = "314"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room311"
+                android:text="311"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room312"
+                android:text="312"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room315"
-                android:text = "315"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room316"
-                android:text = "316"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room313"
+                android:text="313"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room314"
+                android:text="314"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room317"
-                android:text = "317"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room318"
-                android:text = "318"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room317"
+                android:text="317"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room318"
+                android:text="318"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room319"
-                android:text = "319"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room320"
-                android:text = "320"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room319"
+                android:text="319"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room320"
+                android:text="320"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room321"
-                android:text = "321"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room322"
-                android:text = "322"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room321"
+                android:text="321"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room322"
+                android:text="322"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room323"
-                android:text = "323"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room324"
-                android:text = "324"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room323"
+                android:text="323"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room324"
+                android:text="324"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room325"
-                android:text = "325"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room326"
-                android:text = "326"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room325"
+                android:text="325"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room326"
+                android:text="326"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room327"
-                android:text = "327"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room328"
-                android:text = "328"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room327"
+                android:text="327"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room328"
+                android:text="328"
+                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-            <Button
-                android:id = "@+id/room329"
-                android:text = "329"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+            style="@style/room_layout">
 
             <Button
-                android:id = "@+id/room330"
-                android:text = "330"
-                android:textSize="50dp"
-                android:layout_margin="4dp"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:onClick="enterRoom"/>
+                android:id="@+id/room329"
+                android:text="329"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room330"
+                android:text="330"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+
+            <Button
+                android:id="@+id/room331"
+                android:text="331"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room332"
+                android:text="332"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+
+            <Button
+                android:id="@+id/room334"
+                android:text="334"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room336"
+                android:text="336"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+
+            <Button
+                android:id="@+id/room337"
+                android:text="337"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room338"
+                android:text="338"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+
+            <Button
+                android:id="@+id/room339"
+                android:text="339"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room340"
+                android:text="340"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+
+            <Button
+                android:id="@+id/room341"
+                android:text="341"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room342"
+                android:text="342"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+
+            <Button
+                android:id="@+id/room343"
+                android:text="343"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room344"
+                android:text="344"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+
+            <Button
+                android:id="@+id/room345"
+                android:text="345"
+                style="@style/room_button" />
+
+            <Button
+                android:id="@+id/room346"
+                android:text="346"
+                style="@style/room_button" />
         </LinearLayout>
     </GridLayout>
 </ScrollView>

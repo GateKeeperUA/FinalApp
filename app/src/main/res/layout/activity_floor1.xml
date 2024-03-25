@@ -15,12 +15,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="20dp"
-                android:layout_margin="4dp"
-                android:text="Back"
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/arrow"
+                android:backgroundTint="@color/azure"
                 android:onClick="backmain" />
         </LinearLayout>
 

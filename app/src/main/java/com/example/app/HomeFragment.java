@@ -24,15 +24,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // Encontra os botões de cada andar
-        Button primeiroAndarButton = view.findViewById(R.id.andar1);
-        Button segundoAndarButton = view.findViewById(R.id.andar2);
-        Button terceiroAndarButton = view.findViewById(R.id.andar3);
+        Button firstfloorButton = view.findViewById(R.id.floor1);
+        Button secondfloorButton = view.findViewById(R.id.floor2);
+        Button thirdfloorButton = view.findViewById(R.id.floor3);
+        Button officesButton = view.findViewById(R.id.offices);
 
 
         // Define os listeners de clique para cada botão
-        primeiroAndarButton.setOnClickListener(this);
-        segundoAndarButton.setOnClickListener(this);
-        terceiroAndarButton.setOnClickListener(this);
+        firstfloorButton.setOnClickListener(this);
+        secondfloorButton.setOnClickListener(this);
+        thirdfloorButton.setOnClickListener(this);
+        officesButton.setOnClickListener(this);
 
         return view;
     }
@@ -41,16 +43,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         String id = v.getResources().getResourceEntryName(v.getId());
 
-        if (id.equals("andar1")) {
+        if (id.equals("floor1")) {
             Intent intent = new Intent(getActivity(), floor1.class);
             startActivity(intent);
         }
-        else if (id.equals("andar2")) {
+        else if (id.equals("floor2")) {
             Intent intent = new Intent(getActivity(), floor2.class);
             startActivity(intent);
         }
-        else if (id.equals("andar3")) {
+        else if (id.equals("floor3")) {
             Intent intent = new Intent(getActivity(), floor3.class);
+            startActivity(intent);
+        }
+        else if (id.equals("offices")) {
+            Intent intent = new Intent(getActivity(), offices.class);
             startActivity(intent);
         }
     }
