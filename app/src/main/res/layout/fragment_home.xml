@@ -85,8 +85,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="588dp"
         android:textSize="20dp"
-        android:text="(for the flors)"
-        android:layout_marginLeft="106dp">
+        android:text="(for the floors)"
+        android:layout_marginLeft="107dp">
     </TextView>
 
     <TextView
@@ -95,7 +95,7 @@
         android:layout_marginTop="580dp"
         android:textSize="30dp"
         android:text=":"
-        android:layout_marginLeft="223dp">
+        android:layout_marginLeft="236dp">
     </TextView>
 
 
@@ -118,7 +118,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="Available"
+            android:text="Open"
             android:textSize="15dp"
             android:textColor="@color/black"
             android:gravity="center"
@@ -137,7 +137,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="Unavailable"
+            android:text="Closed"
             android:textSize="15dp"
             android:textColor="@color/black"
             android:gravity="center"
@@ -154,7 +154,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="Available with card"
+            android:text="Accessible with card"
             android:textSize="15dp"
             android:textColor="@color/black"
             android:gravity="center"
