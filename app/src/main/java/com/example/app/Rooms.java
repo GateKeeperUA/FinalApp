@@ -34,6 +34,7 @@ public class Rooms extends AppCompatActivity {
     private String humidity;
     private String gas;
     private float _temperature;
+    private float _humidity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,9 +157,10 @@ public class Rooms extends AppCompatActivity {
                                 type++;
                             }
                         }
-                        _temperature = Float.valueOf(temperature)/10;
+                        _temperature = Float.valueOf(temperature)/100;
+                        _humidity = Float.valueOf(humidity)/1000;
                         temperature_.setText(String.valueOf(_temperature)+"ºC");
-                        humidity_.setText(humidity+"%");
+                        humidity_.setText(String.valueOf(humidity)+"%");
                         switch (gas) {
                             case "0":
                                 gas_.setText("Hazardous");

@@ -1,6 +1,9 @@
 package com.example.app;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,17 @@ public class nfcFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Code to store UID in the phone
+        /*SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("key", "...");
+        editor.apply();
+
+        //Code to read stored UID in the phone
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String UID = sharedPreferences.getString("key", "00 00 00 00");
+        Log.d("Shared_preference",UID);*/
     }
 
     @Override
