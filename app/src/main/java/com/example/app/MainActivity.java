@@ -53,15 +53,20 @@ import com.google.android.material.navigation.NavigationView;
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                bottomNavigationView.getMenu().findItem(R.id.home)
+                        .setIcon(R.drawable.home_outlined);
+                bottomNavigationView.getMenu().findItem(R.id.shorts)
+                        .setIcon(R.drawable.lock_outlined);
 
                 if (item.getItemId() == R.id.home) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-
+                    item.setIcon(R.drawable.nav_home);
+                    return true;
 
                 } else if (item.getItemId() == R.id.shorts) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new nfcFragment()).commit();
-
-
+                    item.setIcon(R.drawable.nav_lock);
+                    return true;
                 }
                 return false;
             }
