@@ -158,9 +158,9 @@ public class Rooms extends AppCompatActivity {
                             }
                         }
                         _temperature = Float.valueOf(temperature)/100;
-                        _humidity = Float.valueOf(humidity)/1000;
+                        _humidity = Float.valueOf(humidity)/100;
                         temperature_.setText(String.valueOf(_temperature)+"ºC");
-                        humidity_.setText(String.valueOf(humidity)+"%");
+                        humidity_.setText(String.valueOf(_humidity)+"%");
                         switch (gas) {
                             case "0":
                                 gas_.setText("Hazardous");
