@@ -40,20 +40,8 @@
         <LinearLayout
             style="@style/room_layout">
             <Button
-                android:id="@+id/room103"
-                android:text="103"
-                style="@style/room_button" />
-            <Button
                 android:id="@+id/room104"
                 android:text="104"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room105"
-                android:text="105"
                 style="@style/room_button" />
             <Button
                 android:id="@+id/room106"
@@ -64,108 +52,36 @@
         <LinearLayout
             style="@style/room_layout">
             <Button
-                android:id="@+id/room107"
-                android:text="107"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room108"
-                android:text="108"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room109"
-                android:text="109"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room110"
-                android:text="110"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room111"
-                android:text="111"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room114"
-                android:text="114"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room115"
-                android:text="115"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room116"
-                android:text="116"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room117"
-                android:text="117"
-                style="@style/room_button" />
-            <Button
                 android:id="@+id/room118"
                 android:text="118"
                 style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
             <Button
                 android:id="@+id/room119"
                 android:text="119"
                 style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
             <Button
                 android:id="@+id/room120"
                 android:text="120"
                 style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
             <Button
                 android:id="@+id/room121"
                 android:text="121"
                 style="@style/room_button" />
-            <Button
-                android:id="@+id/room122"
-                android:text="122"
-                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room123"
-                android:text="123"
-                style="@style/room_button" />
             <Button
                 android:id="@+id/room124"
                 android:text="124"
                 style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
             <Button
                 android:id="@+id/room125"
                 android:text="125"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room126"
-                android:text="126"
                 style="@style/room_button" />
         </LinearLayout>
 
@@ -190,6 +106,18 @@
             <Button
                 android:id="@+id/room130"
                 android:text="130"
+                style="@style/room_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/room_layout">
+            <Button
+                android:id="@+id/room131"
+                android:text="131"
+                style="@style/room_button" />
+            <Button
+                android:id="@+id/room136"
+                android:text="136"
                 style="@style/room_button" />
         </LinearLayout>
 
