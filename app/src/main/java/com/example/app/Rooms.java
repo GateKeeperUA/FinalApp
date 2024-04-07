@@ -1,6 +1,5 @@
 package com.example.app;
 
-import static com.example.app.MainActivity.last_floor;
 import static com.example.app.MainActivity.room;
 
 import android.content.Intent;
@@ -60,21 +59,7 @@ public class Rooms extends AppCompatActivity {
         } catch (MqttException e) {
             e.printStackTrace();
         }
-
-        if(last_floor==1) {
-            Intent intent = new Intent(this, floor1.class);
-            startActivity(intent);
-        }
-        else if(last_floor==2) {
-            Intent intent = new Intent(this, floor2.class);
-            startActivity(intent);
-        }
-        else if(last_floor==3) {
-            Intent intent = new Intent(this, floor3.class);
-            startActivity(intent);
-        }
-
-
+        onBackPressed();
     }
 
     @Override

@@ -3,8 +3,6 @@ package com.example.app;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
@@ -19,35 +17,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.Arrays;
 import java.util.concurrent.Executor;
 
 
+
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-
     public static String room;
-    public static int last_floor;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     BottomNavigationView bottomNavigationView;
     BiometricPrompt biometricPrompt;
     BiometricPrompt.PromptInfo promptInfo;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Biometric(true);
+
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -73,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 bottomNavigationView.getMenu().findItem(R.id.home).setIcon(R.drawable.home_outlined);
                 bottomNavigationView.getMenu().findItem(R.id.shorts).setIcon(R.drawable.lock_outlined);
-                Log.d("Mudança","ola");
 
                 if (item.getItemId() == R.id.home) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();

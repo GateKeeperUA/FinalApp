@@ -1,6 +1,5 @@
 package com.example.app;
 
-import static com.example.app.MainActivity.last_floor;
 import static com.example.app.MainActivity.room;
 
 import android.content.Intent;
@@ -163,14 +162,12 @@ public class floor2 extends AppCompatActivity {
     }
 
     public void backmain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        onBackPressed();
     }
 
     public void enterRoom(View v) {
         // Identifica qual botão foi clicado
         String id = v.getResources().getResourceEntryName(v.getId());
-        last_floor = 2;
 
         Intent intent = new Intent(this, Rooms.class);
         startActivity(intent);
