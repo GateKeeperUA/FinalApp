@@ -34,10 +34,10 @@
             android:paddingTop="5dp">
 
             <TextView
-                android:layout_width="110dp"
+                android:layout_width="120dp"
                 android:layout_height="60dp"
                 android:gravity="left|center"
-                android:textSize="38sp"
+                android:textSize="40sp"
                 android:text="Office"
                 android:fontFamily="sans"
                 android:layout_marginHorizontal="10dp"
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:gravity="center"
+                android:gravity="left|center"
                 android:textSize="40sp"
                 android:text="Professor"
                 android:fontFamily="sans"

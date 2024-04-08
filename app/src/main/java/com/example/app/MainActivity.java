@@ -24,7 +24,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import java.util.concurrent.Executor;
-
+import static com.example.app.Biometrics.entered;
 
 
 
@@ -35,14 +35,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     BottomNavigationView bottomNavigationView;
     BiometricPrompt biometricPrompt;
     BiometricPrompt.PromptInfo promptInfo;
+    public static boolean nfc_discovered=false;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Biometric(true);
 
+
+        if(!entered) {
+            setContentView(R.layout.activity_main);
+            Biometric(true);
+            entered = true;
+        }
+        else {
+            setContentView(R.layout.activity_main_visible);
+        }
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -131,6 +139,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new nfcFragment()).commit();
             bottomNavigationView.getMenu().findItem(R.id.shorts).setIcon(R.drawable.nav_lock);
 
+            nfc_discovered = true;
+
             Toast.makeText(this,"NFC Tag saved",Toast.LENGTH_LONG).show();
         }
     }
@@ -150,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return out;
     }
+
 
     private void Biometric(boolean able) {
         if (able) {

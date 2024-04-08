@@ -6,10 +6,14 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fundo"
+    android:background="@color/black"
     app:layoutDescription="@xml/fragment_nfc_scene"
     tools:context=".nfcFragment">
 
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <ImageButton
         android:id="@+id/show"
@@ -21,17 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--<EditText
-        android:id="@+id/card_account_field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="360dp"
-        android:fontFamily="sans-serif-condensed"
-        android:lines="4"
-        android:minLines="4"
-        android:textSize="12dp"
-        android:textStyle="bold" />-->
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
 
