@@ -81,26 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="580dp"
         android:textSize="30dp"
-        android:text="Legend"
+        android:text="Legend:"
         android:layout_marginLeft="8dp">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="588dp"
-        android:textSize="20dp"
-        android:text="(for the floors)"
-        android:layout_marginLeft="107dp">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="580dp"
-        android:textSize="30dp"
-        android:text=":"
-        android:layout_marginLeft="236dp">
     </TextView>
 
 
@@ -124,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="Accessible"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textColor="@color/black"
             android:gravity="center"
             android:layout_marginHorizontal="10dp"
@@ -143,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="Not accessible"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textColor="@color/black"
             android:gravity="center"
             android:layout_marginHorizontal="10dp"
@@ -160,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="Accessible with card"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textColor="@color/black"
             android:gravity="center"
             android:layout_marginHorizontal="10dp"
