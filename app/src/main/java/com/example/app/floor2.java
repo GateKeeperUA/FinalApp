@@ -28,8 +28,6 @@ public class floor2 extends AppCompatActivity {
         Button room206 = findViewById(R.id.room206);
         Button room207 = findViewById(R.id.room207);
         Button room208 = findViewById(R.id.room208);
-        Button room209 = findViewById(R.id.room209);
-        Button room210 = findViewById(R.id.room210);
         Button room211 = findViewById(R.id.room211);
         Button room214 = findViewById(R.id.room214);
         Button room215 = findViewById(R.id.room215);
@@ -80,8 +78,6 @@ public class floor2 extends AppCompatActivity {
             room206.setBackgroundColor(getResources().getColor(R.color.red));
             room207.setBackgroundColor(getResources().getColor(R.color.red));
             room208.setBackgroundColor(getResources().getColor(R.color.red));
-            room209.setBackgroundColor(getResources().getColor(R.color.red));
-            room210.setBackgroundColor(getResources().getColor(R.color.red));
             room211.setBackgroundColor(getResources().getColor(R.color.red));
             room214.setBackgroundColor(getResources().getColor(R.color.red));
             room215.setBackgroundColor(getResources().getColor(R.color.red));
@@ -124,8 +120,6 @@ public class floor2 extends AppCompatActivity {
             room206.setBackgroundColor(getResources().getColor(R.color.green));
             room207.setBackgroundColor(getResources().getColor(R.color.green));
             room208.setBackgroundColor(getResources().getColor(R.color.green));
-            room209.setBackgroundColor(getResources().getColor(R.color.green));
-            room210.setBackgroundColor(getResources().getColor(R.color.green));
             room211.setBackgroundColor(getResources().getColor(R.color.green));
             room214.setBackgroundColor(getResources().getColor(R.color.green));
             room215.setBackgroundColor(getResources().getColor(R.color.green));

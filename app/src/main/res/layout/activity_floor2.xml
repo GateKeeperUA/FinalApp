@@ -73,17 +73,6 @@
                 style="@style/room_button" />
         </LinearLayout>
 
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room209"
-                android:text="209"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room210"
-                android:text="210"
-                style="@style/room_button" />
-        </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">

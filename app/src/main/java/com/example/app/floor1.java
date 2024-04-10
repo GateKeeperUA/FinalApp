@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,10 +16,44 @@ import java.util.Calendar;
 
 public class floor1 extends AppCompatActivity {
 
+    ImageButton button;
+    boolean view=true;
+    boolean open;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floor1);
+
+        button = findViewById(R.id.toggle);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(view) {
+                    setContentView(R.layout.activity_map1);
+                    view = false;
+
+                    ImageView imageView = findViewById(R.id.imageView);
+                    if(open) {
+                        imageView.setImageResource(R.drawable.floor_one_open);
+                    }
+                    else {
+                        imageView.setImageResource(R.drawable.floor_one_closed);
+                    }
+
+                    button = findViewById(R.id.toggle);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (view) {
+                                setContentView(R.layout.activity_map1);
+                            } else {
+                                recreate();
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
         Button room101 = findViewById(R.id.room101);
         Button room102 = findViewById(R.id.room102);
@@ -26,7 +62,7 @@ public class floor1 extends AppCompatActivity {
         Button room118 = findViewById(R.id.room118);
         Button room119 = findViewById(R.id.room119);
         Button room120 = findViewById(R.id.room120);
-        Button room121 = findViewById(R.id.room121);
+        Button room123 = findViewById(R.id.room123);
         Button room124 = findViewById(R.id.room124);
         Button room125 = findViewById(R.id.room125);
         Button room127 = findViewById(R.id.room127);
@@ -52,7 +88,7 @@ public class floor1 extends AppCompatActivity {
             room118.setBackgroundColor(getResources().getColor(R.color.azure));
             room119.setBackgroundColor(getResources().getColor(R.color.azure));
             room120.setBackgroundColor(getResources().getColor(R.color.azure));
-            room121.setBackgroundColor(getResources().getColor(R.color.azure));
+            room123.setBackgroundColor(getResources().getColor(R.color.azure));
             room124.setBackgroundColor(getResources().getColor(R.color.azure));
             room125.setBackgroundColor(getResources().getColor(R.color.azure));
             room127.setBackgroundColor(getResources().getColor(R.color.azure));
@@ -61,6 +97,8 @@ public class floor1 extends AppCompatActivity {
             room130.setBackgroundColor(getResources().getColor(R.color.azure));
             room131.setBackgroundColor(getResources().getColor(R.color.azure));
             room136.setBackgroundColor(getResources().getColor(R.color.azure));
+
+            open = false;
         }
         else {
             room101.setBackgroundColor(getResources().getColor(R.color.green));
@@ -70,7 +108,7 @@ public class floor1 extends AppCompatActivity {
             room118.setBackgroundColor(getResources().getColor(R.color.green));
             room119.setBackgroundColor(getResources().getColor(R.color.green));
             room120.setBackgroundColor(getResources().getColor(R.color.green));
-            room121.setBackgroundColor(getResources().getColor(R.color.green));
+            room123.setBackgroundColor(getResources().getColor(R.color.green));
             room124.setBackgroundColor(getResources().getColor(R.color.green));
             room125.setBackgroundColor(getResources().getColor(R.color.green));
             room127.setBackgroundColor(getResources().getColor(R.color.green));
@@ -79,6 +117,8 @@ public class floor1 extends AppCompatActivity {
             room130.setBackgroundColor(getResources().getColor(R.color.green));
             room131.setBackgroundColor(getResources().getColor(R.color.green));
             room136.setBackgroundColor(getResources().getColor(R.color.green));
+
+            open = true;
         }
     }
 
