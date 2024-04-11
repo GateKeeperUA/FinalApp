@@ -25,6 +25,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
+            <ImageButton
+                android:id="@+id/info"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/info"
+                android:backgroundTint="@color/azure"/>
+
             <ImageButton
                 android:id="@+id/toggle"
                 android:layout_width="50sp"

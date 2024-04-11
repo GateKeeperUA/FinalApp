@@ -2,13 +2,21 @@ package com.example.app;
 
 import static com.example.app.MainActivity.room;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +31,8 @@ public class floor1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floor1);
+
+        setupDropdownMenu();
 
         button = findViewById(R.id.toggle);
         button.setOnClickListener(new View.OnClickListener() {
@@ -120,5 +130,30 @@ public class floor1 extends AppCompatActivity {
         startActivity(intent);
         room = id;
         Log.d("MQTT_Rooms", id);
+    }
+
+    private void setupDropdownMenu() {
+        ImageButton infoButton = findViewById(R.id.info);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDropdownMenu(v);
+            }
+        });
+    }
+
+    private void showDropdownMenu(View anchorView) {
+        // Inflate the dropdown menu layout
+        View popupView = getLayoutInflater().inflate(R.layout.dropdown_menu_layout, null);
+
+        // Create a PopupWindow with WRAP_CONTENT width and height
+        PopupWindow popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        // Set focusable and outside touchable to true to make it interactable
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(true);
+
+        // Show the popup window at the bottom of the anchor view
+        popupWindow.showAsDropDown(anchorView);
     }
 }
