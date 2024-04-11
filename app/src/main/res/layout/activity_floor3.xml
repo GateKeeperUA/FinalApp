@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,69 +10,40 @@
         android:columnCount="1"
         android:rowCount="6">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:id="@+id/backButton"
                 android:layout_width="40dp"
                 android:layout_height="33dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/arrow"
                 android:backgroundTint="@color/azure"
-                android:onClick="backmain" />
+                android:onClick="backmain"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </LinearLayout>
+            <ImageButton
+                android:id="@+id/toggle"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginEnd="20sp"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/map"
+                android:backgroundTint="@color/azure"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room301"
-                android:text="301"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room302"
-                android:text="302"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
             <Button
                 android:id="@+id/room303"
                 android:text="303"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room304"
-                android:text="304"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room305"
-                android:text="305"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room306"
-                android:text="306"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room307"
-                android:text="307"
                 style="@style/room_button" />
 
             <Button
@@ -83,63 +54,19 @@
 
         <LinearLayout
             style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room309"
-                android:text="309"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room310"
-                android:text="310"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
             <Button
                 android:id="@+id/room311"
                 android:text="311"
                 style="@style/room_button" />
 
             <Button
-                android:id="@+id/room312"
-                android:text="312"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room313"
-                android:text="313"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room314"
-                android:text="314"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
                 android:id="@+id/room317"
                 android:text="317"
                 style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room318"
-                android:text="318"
-                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-
             <Button
                 android:id="@+id/room319"
                 android:text="319"
@@ -153,66 +80,9 @@
 
         <LinearLayout
             style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room321"
-                android:text="321"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room322"
-                android:text="322"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room323"
-                android:text="323"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room324"
-                android:text="324"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room325"
-                android:text="325"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room326"
-                android:text="326"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
             <Button
                 android:id="@+id/room327"
                 android:text="327"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room328"
-                android:text="328"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room329"
-                android:text="329"
                 style="@style/room_button" />
 
             <Button
@@ -223,7 +93,6 @@
 
         <LinearLayout
             style="@style/room_layout">
-
             <Button
                 android:id="@+id/room331"
                 android:text="331"
@@ -237,86 +106,14 @@
 
         <LinearLayout
             style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room334"
-                android:text="334"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room336"
-                android:text="336"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room337"
-                android:text="337"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room338"
-                android:text="338"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room339"
-                android:text="339"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room340"
-                android:text="340"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room341"
-                android:text="341"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room342"
-                android:text="342"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
-            <Button
-                android:id="@+id/room343"
-                android:text="343"
-                style="@style/room_button" />
-
-            <Button
-                android:id="@+id/room344"
-                android:text="344"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-
             <Button
                 android:id="@+id/room345"
                 android:text="345"
                 style="@style/room_button" />
 
-            <Button
-                android:id="@+id/room346"
-                android:text="346"
-                style="@style/room_button" />
+            <TextView
+                android:backgroundTint="@color/white"
+                style="@style/room_button_blanck" />
         </LinearLayout>
     </GridLayout>
 </ScrollView>

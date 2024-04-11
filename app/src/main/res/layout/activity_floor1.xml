@@ -35,7 +35,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/map"
                 android:backgroundTint="@color/azure"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -93,44 +92,8 @@
                 android:text="124"
                 style="@style/room_button" />
             <Button
-                android:id="@+id/room125"
-                android:text="125"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room127"
-                android:text="127"
-                style="@style/room_button" />
-            <Button
                 android:id="@+id/room128"
                 android:text="128"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room129"
-                android:text="129"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room130"
-                android:text="130"
-                style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
-            <Button
-                android:id="@+id/room131"
-                android:text="131"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room132"
-                android:text="132"
                 style="@style/room_button" />
         </LinearLayout>
 
@@ -144,6 +107,5 @@
                 android:backgroundTint="@color/white"
                 style="@style/room_button_blanck" />
         </LinearLayout>
-
     </GridLayout>
 </ScrollView>

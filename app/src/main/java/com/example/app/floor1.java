@@ -64,12 +64,7 @@ public class floor1 extends AppCompatActivity {
         Button room120 = findViewById(R.id.room120);
         Button room123 = findViewById(R.id.room123);
         Button room124 = findViewById(R.id.room124);
-        Button room125 = findViewById(R.id.room125);
-        Button room127 = findViewById(R.id.room127);
         Button room128 = findViewById(R.id.room128);
-        Button room129 = findViewById(R.id.room129);
-        Button room130 = findViewById(R.id.room130);
-        Button room131 = findViewById(R.id.room131);
         Button room136 = findViewById(R.id.room136);
 
         String currentTime = Calendar.getInstance().getTime().toString();
@@ -90,12 +85,7 @@ public class floor1 extends AppCompatActivity {
             room120.setBackgroundColor(getResources().getColor(R.color.azure));
             room123.setBackgroundColor(getResources().getColor(R.color.azure));
             room124.setBackgroundColor(getResources().getColor(R.color.azure));
-            room125.setBackgroundColor(getResources().getColor(R.color.azure));
-            room127.setBackgroundColor(getResources().getColor(R.color.azure));
             room128.setBackgroundColor(getResources().getColor(R.color.azure));
-            room129.setBackgroundColor(getResources().getColor(R.color.azure));
-            room130.setBackgroundColor(getResources().getColor(R.color.azure));
-            room131.setBackgroundColor(getResources().getColor(R.color.azure));
             room136.setBackgroundColor(getResources().getColor(R.color.azure));
 
             open = false;
@@ -110,12 +100,7 @@ public class floor1 extends AppCompatActivity {
             room120.setBackgroundColor(getResources().getColor(R.color.green));
             room123.setBackgroundColor(getResources().getColor(R.color.green));
             room124.setBackgroundColor(getResources().getColor(R.color.green));
-            room125.setBackgroundColor(getResources().getColor(R.color.green));
-            room127.setBackgroundColor(getResources().getColor(R.color.green));
             room128.setBackgroundColor(getResources().getColor(R.color.green));
-            room129.setBackgroundColor(getResources().getColor(R.color.green));
-            room130.setBackgroundColor(getResources().getColor(R.color.green));
-            room131.setBackgroundColor(getResources().getColor(R.color.green));
             room136.setBackgroundColor(getResources().getColor(R.color.green));
 
             open = true;
