@@ -30,7 +30,8 @@
 
 
     <style name="AppTheme.ToolbarFont" parent="ThemeOverlay.AppCompat.ActionBar">
-
+        <item name="android:textColorPrimary">@color/azure</item>
+        <item name="android:textColorSecondary">@color/azure</item>
         <item name="textAllCaps">false</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/baumans_regular</item>
