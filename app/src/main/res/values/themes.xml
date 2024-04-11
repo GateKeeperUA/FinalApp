@@ -28,11 +28,8 @@
         <item name="android:shadowRadius">2</item>
     </style>
 
+
     <style name="AppTheme.ToolbarFont" parent="ThemeOverlay.AppCompat.ActionBar">
-        <!--This line changes the color of text in Toolbar-->
-        <item name="android:textColorPrimary">@color/azure</item>
-        <!--This line changes the color of icons in toolbar (back, overflow menu icons)-->
-        <item name="android:textColorSecondary">@color/azure</item>
         <item name="textAllCaps">false</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/baumans_regular</item>

@@ -3,17 +3,16 @@ package com.example.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import androidx.appcompat.widget.Toolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -35,6 +34,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         secondfloorButton.setOnClickListener(this);
         thirdfloorButton.setOnClickListener(this);
         officesButton.setOnClickListener(this);
+
+        Toolbar toolbar = requireActivity().findViewById(R.id.toolbar_v);
+        BottomNavigationView bottomNavigation = requireActivity().findViewById(R.id.bottom_navigation_v);
+
+        ConstraintLayout.LayoutParams toolbarLayoutParams = (ConstraintLayout.LayoutParams) toolbar.getLayoutParams();
+        toolbarLayoutParams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
+        toolbar.setLayoutParams(toolbarLayoutParams);
+
+        ConstraintLayout.LayoutParams bottomNavigationLayoutParams = (ConstraintLayout.LayoutParams) bottomNavigation.getLayoutParams();
+        bottomNavigationLayoutParams.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
+        bottomNavigation.setLayoutParams(bottomNavigationLayoutParams);
 
         return view;
     }

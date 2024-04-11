@@ -1,12 +1,13 @@
 package com.example.app;
 
+import static com.example.app.Biometrics.entered;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -20,11 +21,12 @@ import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
 import java.util.concurrent.Executor;
-import static com.example.app.Biometrics.entered;
 
 
 
@@ -77,19 +79,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 bottomNavigationView.getMenu().findItem(R.id.home).setIcon(R.drawable.home_outlined);
                 bottomNavigationView.getMenu().findItem(R.id.shorts).setIcon(R.drawable.lock_outlined);
 
+                Fragment selectedFragment = null;
                 if (item.getItemId() == R.id.home) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                    selectedFragment = new HomeFragment();
                     item.setIcon(R.drawable.nav_home);
-                    return true;
-
                 } else if (item.getItemId() == R.id.shorts) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new nfcFragment()).commit();
+                    selectedFragment = new nfcFragment();
                     item.setIcon(R.drawable.nav_lock);
+                }
+
+                // Verifica se o fragmento selecionado é o que precisa da mudança de cor
+                if (selectedFragment instanceof nfcFragment) {
+                    setBottomNavigationItemColor(R.color.white); // Define a cor especificada
+                } else {
+                    // Define a cor padrão se não for o fragmento específico
+                    setBottomNavigationItemColor(R.color.grey);
+                }
+
+                // Troca para o fragmento selecionado
+                if (selectedFragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                     return true;
                 }
                 return false;
             }
         });
+    }
+
+    private void setBottomNavigationItemColor(int color) {
+        bottomNavigationView.setItemIconTintList(ContextCompat.getColorStateList(this, color));
+        bottomNavigationView.setItemTextColor(ContextCompat.getColorStateList(this, color));
     }
 
     @Override
