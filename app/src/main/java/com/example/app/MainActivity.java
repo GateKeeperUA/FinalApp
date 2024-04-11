@@ -157,7 +157,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             bottomNavigationView.getMenu().findItem(R.id.shorts).setIcon(R.drawable.lock_outlined);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new nfcFragment()).commit();
             bottomNavigationView.getMenu().findItem(R.id.shorts).setIcon(R.drawable.nav_lock);
-
+            setBottomNavigationItemColor(R.color.white);
+            
             nfc_discovered = true;
 
             Toast.makeText(this,"NFC Tag saved",Toast.LENGTH_LONG).show();

@@ -35,17 +35,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         thirdfloorButton.setOnClickListener(this);
         officesButton.setOnClickListener(this);
 
-        Toolbar toolbar = requireActivity().findViewById(R.id.toolbar_v);
-        BottomNavigationView bottomNavigation = requireActivity().findViewById(R.id.bottom_navigation_v);
-
-        ConstraintLayout.LayoutParams toolbarLayoutParams = (ConstraintLayout.LayoutParams) toolbar.getLayoutParams();
-        toolbarLayoutParams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
-        toolbar.setLayoutParams(toolbarLayoutParams);
-
-        ConstraintLayout.LayoutParams bottomNavigationLayoutParams = (ConstraintLayout.LayoutParams) bottomNavigation.getLayoutParams();
-        bottomNavigationLayoutParams.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
-        bottomNavigation.setLayoutParams(bottomNavigationLayoutParams);
-
         return view;
     }
 
