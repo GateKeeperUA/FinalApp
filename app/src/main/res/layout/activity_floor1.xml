@@ -88,36 +88,25 @@
         <LinearLayout
             style="@style/room_layout">
             <Button
-                android:id="@+id/room120"
-                android:text="120"
-                style="@style/room_button" />
-            <Button
                 android:id="@+id/room123"
                 android:text="123"
                 style="@style/room_button" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/room_layout">
             <Button
                 android:id="@+id/room124"
                 android:text="124"
                 style="@style/room_button" />
-            <Button
-                android:id="@+id/room128"
-                android:text="128"
-                style="@style/room_button" />
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
             <Button
+                android:id="@+id/room128"
+                android:text="128"
+                style="@style/room_button" />
+            <Button
                 android:id="@+id/room136"
                 android:text="136"
                 style="@style/room_button" />
-            <TextView
-                android:backgroundTint="@color/white"
-                style="@style/room_button_blanck" />
         </LinearLayout>
     </GridLayout>
 </ScrollView>
