@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="azure">#0F79DB</color>
+    <color name="azure_trans">#700F79DB</color>
     <color name="royal_blue">#6070CF</color>
     <color name="amethyst">#8368C0</color>
     <color name="purpureus">#9961AF</color>
