@@ -18,7 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 
 public class floor2 extends AppCompatActivity {
-
+    private static final String PREF_COLOR_KEY = "R.color.yellow";
+    private static final String DEFAULT_COLOR = "R.color.green";
     ImageButton button;
     boolean view=true;
     boolean open;
@@ -88,7 +89,7 @@ public class floor2 extends AppCompatActivity {
         Log.d("MQTT_Date","Day "+day+" Hour "+hour+" Minute "+minute);
 
         if(day.equals("Sat") || day.equals("Sun") || hour>=23 || (hour==22 && minute>=30) || (hour==20 && minute>=15 && minute<=45) || hour<8 || (hour==8 && minute<30)) {
-            room201.setBackgroundColor(getResources().getColor(R.color.red));
+            room201.setBackgroundColor(getResources().getColor(PREF_COLOR_KEY));
             room202.setBackgroundColor(getResources().getColor(R.color.red));
             room203.setBackgroundColor(getResources().getColor(R.color.red));
             room204.setBackgroundColor(getResources().getColor(R.color.red));
