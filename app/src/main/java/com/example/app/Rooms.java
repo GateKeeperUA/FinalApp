@@ -2,7 +2,6 @@ package com.example.app;
 
 import static com.example.app.MainActivity.room;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -75,14 +74,6 @@ public class Rooms extends AppCompatActivity {
         }
         super.onDestroy();
 
-    }
-    private void publishMessage(String topic, String message){
-        try {
-            MqttMessage mqttMessage = new MqttMessage(message.getBytes());
-            client.publish(topic, mqttMessage);
-        } catch (MqttException e) {
-            e.printStackTrace();
-        }
     }
     private void subscribeToTopic(String topic){
         try {

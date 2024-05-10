@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -26,6 +27,12 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+import java.util.Random;
 import java.util.concurrent.Executor;
 
 
@@ -38,12 +45,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     BiometricPrompt biometricPrompt;
     BiometricPrompt.PromptInfo promptInfo;
     public static boolean nfc_discovered=false;
+    public static MqttClient client;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         if(!entered) {
             setContentView(R.layout.activity_main);
@@ -83,6 +90,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (item.getItemId() == R.id.home) {
                     selectedFragment = new HomeFragment();
                     item.setIcon(R.drawable.nav_home);
+
+                    try {
+                        client.disconnect();
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
                 } else if (item.getItemId() == R.id.shorts) {
                     selectedFragment = new nfcFragment();
                     item.setIcon(R.drawable.nav_lock);

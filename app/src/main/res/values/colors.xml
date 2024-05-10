@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="black_trans">#80000000</color>
     <color name="azure">#0F79DB</color>
     <color name="azure_trans">#700F79DB</color>
     <color name="royal_blue">#6070CF</color>
@@ -13,7 +14,10 @@
     <color name="white_blue">#E0E8FF</color>
     <color name="trans">#00FFFFFF</color>
     <color name="grey">#808080</color>
+    <color name="grey_white">#AA808080</color>
     <color name="grey_trans">#45000000</color>
     <color name="green">#33D864</color>
+    <color name="green_trans">#8033D864</color>
     <color name="red">#DE2029</color>
+    <color name="red_trans">#99DE2029</color>
 </resources>
