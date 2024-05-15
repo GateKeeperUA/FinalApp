@@ -3,8 +3,9 @@ package com.example.app;
 import static com.example.app.MainActivity.room;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 
 public class floor2 extends AppCompatActivity {
-    private static final String PREF_COLOR_KEY = "R.color.yellow";
-    private static final String DEFAULT_COLOR = "R.color.green";
+    private static final String PREF_COLOR_KEY = "color_scheme"; // Chave para a preferência de esquema de cores
     ImageButton button;
-    boolean view=true;
+    boolean view = true;
     boolean open;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +35,14 @@ public class floor2 extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(view) {
+                if (view) {
                     setContentView(R.layout.activity_map1);
                     view = false;
 
                     ImageView imageView = findViewById(R.id.imageView);
-                    if(open) {
+                    if (open) {
                         imageView.setImageResource(R.drawable.floor_two_open);
-                    }
-                    else {
+                    } else {
                         imageView.setImageResource(R.drawable.floor_two_closed);
                     }
 
@@ -61,6 +61,13 @@ public class floor2 extends AppCompatActivity {
             }
         });
 
+        // Recuperar a preferência do esquema de cores
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isDefaultScheme = sharedPreferences.getBoolean(PREF_COLOR_KEY, true);
+
+        // Definir as cores com base na preferência
+        int colorOcupado = isDefaultScheme ? getResources().getColor(R.color.red) : getResources().getColor(R.color.amethyst);
+        int colorLivre = isDefaultScheme ? getResources().getColor(R.color.green) : getResources().getColor(R.color.yellow);
 
         Button room201 = findViewById(R.id.room201);
         Button room202 = findViewById(R.id.room202);
@@ -81,52 +88,51 @@ public class floor2 extends AppCompatActivity {
         Button room231 = findViewById(R.id.room231);
 
         String currentTime = Calendar.getInstance().getTime().toString();
-        Log.d("MQTT_Date",currentTime);
+        Log.d("MQTT_Date", currentTime);
 
         String day = currentTime.substring(0, 3);
-        int hour = Integer.parseInt(currentTime.substring(11,13));
-        int minute = Integer.parseInt(currentTime.substring(14,16));
-        Log.d("MQTT_Date","Day "+day+" Hour "+hour+" Minute "+minute);
+        int hour = Integer.parseInt(currentTime.substring(11, 13));
+        int minute = Integer.parseInt(currentTime.substring(14, 16));
+        Log.d("MQTT_Date", "Day " + day + " Hour " + hour + " Minute " + minute);
 
-        if(day.equals("Sat") || day.equals("Sun") || hour>=23 || (hour==22 && minute>=30) || (hour==20 && minute>=15 && minute<=45) || hour<8 || (hour==8 && minute<30)) {
-            room201.setBackgroundColor(getResources().getColor(PREF_COLOR_KEY));
-            room202.setBackgroundColor(getResources().getColor(R.color.red));
-            room203.setBackgroundColor(getResources().getColor(R.color.red));
-            room204.setBackgroundColor(getResources().getColor(R.color.red));
-            room205.setBackgroundColor(getResources().getColor(R.color.red));
-            room206.setBackgroundColor(getResources().getColor(R.color.red));
-            room207.setBackgroundColor(getResources().getColor(R.color.red));
-            room208.setBackgroundColor(getResources().getColor(R.color.red));
-            room211.setBackgroundColor(getResources().getColor(R.color.red));
-            room214.setBackgroundColor(getResources().getColor(R.color.red));
-            room215.setBackgroundColor(getResources().getColor(R.color.red));
-            room216.setBackgroundColor(getResources().getColor(R.color.red));
-            room217.setBackgroundColor(getResources().getColor(R.color.red));
-            room220.setBackgroundColor(getResources().getColor(R.color.red));
-            room225.setBackgroundColor(getResources().getColor(R.color.red));
-            room227.setBackgroundColor(getResources().getColor(R.color.red));
-            room231.setBackgroundColor(getResources().getColor(R.color.red));
+        if (day.equals("Sat") || day.equals("Sun") || hour >= 23 || (hour == 22 && minute >= 30) || (hour == 20 && minute >= 15 && minute <= 45) || hour < 8 || (hour == 8 && minute < 30)) {
+            room201.setBackgroundColor(colorOcupado);
+            room202.setBackgroundColor(colorOcupado);
+            room203.setBackgroundColor(colorOcupado);
+            room204.setBackgroundColor(colorOcupado);
+            room205.setBackgroundColor(colorOcupado);
+            room206.setBackgroundColor(colorOcupado);
+            room207.setBackgroundColor(colorOcupado);
+            room208.setBackgroundColor(colorOcupado);
+            room211.setBackgroundColor(colorOcupado);
+            room214.setBackgroundColor(colorOcupado);
+            room215.setBackgroundColor(colorOcupado);
+            room216.setBackgroundColor(colorOcupado);
+            room217.setBackgroundColor(colorOcupado);
+            room220.setBackgroundColor(colorOcupado);
+            room225.setBackgroundColor(colorOcupado);
+            room227.setBackgroundColor(colorOcupado);
+            room231.setBackgroundColor(colorOcupado);
 
             open = false;
-        }
-        else {
-            room201.setBackgroundColor(getResources().getColor(R.color.green));
-            room202.setBackgroundColor(getResources().getColor(R.color.green));
-            room203.setBackgroundColor(getResources().getColor(R.color.green));
-            room204.setBackgroundColor(getResources().getColor(R.color.green));
-            room205.setBackgroundColor(getResources().getColor(R.color.green));
-            room206.setBackgroundColor(getResources().getColor(R.color.green));
-            room207.setBackgroundColor(getResources().getColor(R.color.green));
-            room208.setBackgroundColor(getResources().getColor(R.color.green));
-            room211.setBackgroundColor(getResources().getColor(R.color.green));
-            room214.setBackgroundColor(getResources().getColor(R.color.green));
-            room215.setBackgroundColor(getResources().getColor(R.color.green));
-            room216.setBackgroundColor(getResources().getColor(R.color.green));
-            room217.setBackgroundColor(getResources().getColor(R.color.green));
-            room220.setBackgroundColor(getResources().getColor(R.color.green));
-            room225.setBackgroundColor(getResources().getColor(R.color.green));
-            room227.setBackgroundColor(getResources().getColor(R.color.green));
-            room231.setBackgroundColor(getResources().getColor(R.color.green));
+        } else {
+            room201.setBackgroundColor(colorLivre);
+            room202.setBackgroundColor(colorLivre);
+            room203.setBackgroundColor(colorLivre);
+            room204.setBackgroundColor(colorLivre);
+            room205.setBackgroundColor(colorLivre);
+            room206.setBackgroundColor(colorLivre);
+            room207.setBackgroundColor(colorLivre);
+            room208.setBackgroundColor(colorLivre);
+            room211.setBackgroundColor(colorLivre);
+            room214.setBackgroundColor(colorLivre);
+            room215.setBackgroundColor(colorLivre);
+            room216.setBackgroundColor(colorLivre);
+            room217.setBackgroundColor(colorLivre);
+            room220.setBackgroundColor(colorLivre);
+            room225.setBackgroundColor(colorLivre);
+            room227.setBackgroundColor(colorLivre);
+            room231.setBackgroundColor(colorLivre);
 
             open = true;
         }

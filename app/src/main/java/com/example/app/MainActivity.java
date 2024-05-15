@@ -8,8 +8,11 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,8 +31,6 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.concurrent.Executor;
 
-
-
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static String room;
     DrawerLayout drawerLayout;
@@ -37,20 +38,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     BottomNavigationView bottomNavigationView;
     BiometricPrompt biometricPrompt;
     BiometricPrompt.PromptInfo promptInfo;
-    public static boolean nfc_discovered=false;
-
+    public static boolean nfc_discovered = false;
+    private static final String PREF_COLOR_KEY = "color_scheme";
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        if(!entered) {
+        if (!entered) {
             setContentView(R.layout.activity_main);
             Biometric(true);
             entered = true;
-        }
-        else {
+        } else {
             setContentView(R.layout.activity_main_visible);
         }
 
@@ -104,6 +104,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
+
+        // Inicialização das preferências compartilhadas
+        sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
+
+        // Recuperar a preferência do esquema de cores
+        boolean isDefaultScheme = sharedPreferences.getBoolean(PREF_COLOR_KEY, true);
+
+        // Obter o item do menu e definir o estado inicial do checkbox
+        MenuItem daltonismItem = navigationView.getMenu().findItem(R.id.daltonism);
+        View actionView = daltonismItem.getActionView();
+        CheckBox checkBox = actionView.findViewById(R.id.checkBox);
+        checkBox.setChecked(!isDefaultScheme);
+
+        // Define um listener para a checkbox
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // Salva a preferência ao alterar o estado da checkbox
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(PREF_COLOR_KEY, !isChecked);
+                editor.apply();
+            }
+        });
     }
 
     private void setBottomNavigationItemColor(int color) {
@@ -120,21 +143,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (item.getItemId() == R.id.logout) {
             Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
 
-        }else if (item.getItemId() == R.id.Settings) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new settingsFragment()).commit();
-
-        }else if (item.getItemId() == R.id.help) {
+        } else if (item.getItemId() == R.id.help) {
             Toast.makeText(this, "Help Selected", Toast.LENGTH_SHORT).show();
 
-        }else if (item.getItemId() == R.id.aboutus) {
+        } else if (item.getItemId() == R.id.aboutus) {
             Toast.makeText(this, "About Us Selected", Toast.LENGTH_SHORT).show();
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://gatekeeper.web.ua.pt/"));
             startActivity(browserIntent);
 
-        }else if (item.getItemId() == R.id.instagram) {
+        } else if (item.getItemId() == R.id.instagram) {
             Intent browserIntent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/gatekeeper_deti?igshid=MTNiYzNiMzkwZA=="));
             startActivity(browserIntent2);
-        }else if (item.getItemId() == R.id.rateus) {
+
+        } else if (item.getItemId() == R.id.rateus) {
             Toast.makeText(this, "Rate Us Selected", Toast.LENGTH_SHORT).show();
             Intent browserIntent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLScsaPy-4hMDuMQLN-qyQRwaG-K3xAgEe8I0Ye3Cy41TwVD4LQ/viewform?usp=sf_link"));
             startActivity(browserIntent3);
@@ -161,11 +182,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             nfc_discovered = true;
 
-            Toast.makeText(this,"NFC Tag saved",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "NFC Tag saved", Toast.LENGTH_LONG).show();
         }
     }
 
-    private String ByteArrayToHexString(byte [] inarray) {
+
+        private String ByteArrayToHexString(byte [] inarray) {
         int i, j, in;
         String [] hex = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
         String out= "";
@@ -219,4 +241,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             biometricPrompt.authenticate(promptInfo);
         }
     }
+
 }
