@@ -17,6 +17,9 @@
         <item name="android:textColor">@color/grey</item>
     </style>
 
+    <style name="BACKGROUND_BLACK">
+        <item name="android:background">@color/black</item>
+    </style>
 
     <style name="ThemeOverlay.AppCompat.navTheme">
         <item name="colorPrimary">@color/azure</item>
@@ -26,8 +29,8 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="NFC_BUTTON">
-        <item name="android:background">@color/azure</item>
+    <style name="NFC_Borda">
+        <item name="colorPrimaryVariant">@color/black</item>
     </style>
 
 
