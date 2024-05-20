@@ -8,11 +8,12 @@
     tools:context=".HomeFragment"
     android:background="@drawable/background">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#20FFFFFF" />
 
+    <View
+        style="@style/BACKGROUND"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <!-- android:background="#20FFFFFF" -->
 
     <ImageView
         android:layout_width="match_parent"
@@ -33,6 +34,7 @@
         android:layout_marginTop="85dp"/>
 
     <TextView
+        style="@style/TEXT_COLOR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -42,6 +44,7 @@
         android:id="@+id/legendTextView"/>
 
     <Button
+        style="@style/ACTION_BUTTON"
         android:id="@+id/floor1"
         android:layout_width="350dp"
         android:layout_height="60dp"
@@ -54,6 +57,7 @@
         android:background="@drawable/roundshape_button" />
 
     <Button
+        style="@style/ACTION_BUTTON"
         android:id="@+id/floor2"
         android:layout_width="350dp"
         android:layout_height="60dp"
@@ -66,6 +70,7 @@
         android:background="@drawable/roundshape_button"/>
 
     <Button
+        style="@style/ACTION_BUTTON"
         android:id="@+id/floor3"
         android:layout_width="350dp"
         android:layout_height="60dp"
@@ -78,6 +83,7 @@
         android:background="@drawable/roundshape_button"/>
 
     <Button
+        style="@style/ACTION_BUTTON"
         android:id="@+id/offices"
         android:layout_width="350dp"
         android:layout_height="60dp"

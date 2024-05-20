@@ -35,7 +35,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import java.util.Random;
 import java.util.concurrent.Executor;
 
-
+import android.content.res.Configuration;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static String room;
@@ -102,11 +102,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
 
                 // Verifica se o fragmento selecionado é o que precisa da mudança de cor
+
                 if (selectedFragment instanceof nfcFragment) {
                     setBottomNavigationItemColor(R.color.white); // Define a cor especificada
                 } else {
-                    // Define a cor padrão se não for o fragmento específico
-                    setBottomNavigationItemColor(R.color.grey);
+                    if (isDarkThemeActive()) {
+                        setBottomNavigationItemColor(R.color.black_trans); // Tema escuro: cor vermelha
+                    } else {
+                        setBottomNavigationItemColor(R.color.grey); // Tema claro: cor cinza
+                    }
                 }
 
                 // Troca para o fragmento selecionado
@@ -117,6 +121,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
+    }
+
+    private boolean isDarkThemeActive() {
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
 
     private void setBottomNavigationItemColor(int color) {

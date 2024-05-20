@@ -22,9 +22,6 @@
         android:theme="@style/Theme.GateKeeper"
         tools:targetApi="31">
         <activity
-            android:name=".choose_room"
-            android:exported="false" />
-        <activity
             android:name=".offices"
             android:exported="false" />
         <activity
