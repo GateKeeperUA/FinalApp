@@ -5,6 +5,7 @@ import static com.example.app.MainActivity.client;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.os.CountDownTimer;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -39,12 +40,16 @@ import java.util.Random;
 public class nfcFragment extends Fragment{
 
     private VideoView videoView;
-    private static final String BROKER_URL = "tcp://yopoitio.duckdns.org:1883";
+    //private static final String BROKER_URL = "tcp://yopoitio.duckdns.org:1883";
+    private static final String BROKER_URL = "tcp://192.168.1.100:1883";
     private String CLIENT_ID;
     private String topic="DETI/Authenticate";
     private String UID;
     private ImageButton authenticate;
     private View circle;
+    private boolean flag = true;
+    private CountDownTimer countDownTimer;
+    private boolean started_timer = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,6 +72,11 @@ public class nfcFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 publishMessage(UID.toLowerCase());
+                if(started_timer){
+                    countDownTimer.cancel();
+                }
+
+                startTimer(2000);
             }
         });
 
@@ -130,13 +140,16 @@ public class nfcFragment extends Fragment{
                 }
 
                 @Override
-                public void messageArrived(String topic, MqttMessage message) throws Exception {
+                public void messageArrived(String topic, MqttMessage message) throws Exception {;
                     String received = new String(message.getPayload());
                     Log.d("MQTT_NFC_receive",received);
                     if(received.equals("1"+UID.toLowerCase())){
+                        flag = false;
                         circle.getBackground().setColorFilter(getResources().getColor(R.color.green_trans), PorterDuff.Mode.DARKEN);
+
                     }
                     else if(received.equals("0"+UID.toLowerCase())){
+                        flag = true;
                         circle.getBackground().setColorFilter(getResources().getColor(R.color.red_trans), PorterDuff.Mode.DARKEN);
                     }
                 }
@@ -150,11 +163,13 @@ public class nfcFragment extends Fragment{
     };
 
     private void publishMessage(String message){
-        try {
-            MqttMessage mqttMessage = new MqttMessage(message.getBytes());
-            client.publish(topic+"/Enter", mqttMessage.getPayload(),2,false);
-        } catch (MqttException e) {
-            e.printStackTrace();
+        if(flag){
+            try {
+                MqttMessage mqttMessage = new MqttMessage(message.getBytes());
+                client.publish(topic+"/Enter", mqttMessage.getPayload(),2,false);
+            } catch (MqttException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -175,5 +190,23 @@ public class nfcFragment extends Fragment{
         } catch (MqttException e) {
             e.printStackTrace();
         }
+    }
+
+    private void startTimer(long timeInMillis) {
+        started_timer = true;
+        countDownTimer = new CountDownTimer(timeInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.d("NFC_color","tick");
+            }
+
+            @Override
+            public void onFinish() {
+                flag = true;
+                started_timer = false;
+                circle.getBackground().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.DARKEN);
+                Log.d("NFC_color","finished");
+            }
+        }.start();
     }
 }
