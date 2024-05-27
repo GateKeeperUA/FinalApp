@@ -40,7 +40,6 @@ import java.util.Random;
 public class nfcFragment extends Fragment{
 
     private VideoView videoView;
-    //private static final String BROKER_URL = "tcp://yopoitio.duckdns.org:1883";
     private static final String BROKER_URL = "tcp://192.168.0.100:1883";
     private String CLIENT_ID;
     private String topic="DETI/Authenticate";
