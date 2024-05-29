@@ -21,8 +21,9 @@ import java.util.Random;
 
 public class Rooms extends AppCompatActivity {
 
-    //private static final String BROKER_URL = "tcp://yopoitio.duckdns.org:1883";
-    private static final String BROKER_URL = "tcp://192.168.0.100:1883";
+
+    
+    private static final String BROKER_URL = "tcp://192.168.0.103:1883";
     private String CLIENT_ID;
     public TextView capacity_;
     public TextView temperature_;
