@@ -8,35 +8,6 @@
     android:layout_gravity="center_horizontal"
     android:padding="8dp">
 
-<<<<<<< Updated upstream
-        <TextView
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:text="Accessible"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:fontFamily="sans"
-            android:gravity="center"
-            android:background="@drawable/rounded_corner_background"
-            android:backgroundTint="@color/green"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center_horizontal"/>
-
-        <TextView
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="Not accessible"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:fontFamily="sans"
-            android:background="@drawable/rounded_corner_background"
-            android:backgroundTint="@color/red"
-            android:layout_marginBottom="5dp"
-            android:layout_gravity="center_horizontal"/>
-=======
-
         <FrameLayout android:layout_gravity="center_horizontal">
 
                 <ImageView
@@ -79,7 +50,6 @@
                     android:fontFamily="sans"
                     android:layout_gravity="center_horizontal"/>
         </FrameLayout>
->>>>>>> Stashed changes
 
         <TextView
             android:layout_width="270dp"
@@ -88,7 +58,6 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:fontFamily="sans"
-            android:textColor="@color/white"
             android:gravity="center"
             android:background="@drawable/rounded_corner_background"
             android:backgroundTint="@color/azure"

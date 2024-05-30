@@ -8,10 +8,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-<<<<<<< Updated upstream
 import android.util.Log;
-=======
->>>>>>> Stashed changes
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -143,15 +140,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             AppPreferences.setDaltonismEnabled(MainActivity.this, isChecked);
         });
     }
-
-<<<<<<< Updated upstream
     private boolean isDarkThemeActive() {
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
-=======
-
->>>>>>> Stashed changes
 
     private void setBottomNavigationItemColor(int color) {
         bottomNavigationView.setItemIconTintList(ContextCompat.getColorStateList(this, color));
