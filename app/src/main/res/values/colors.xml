@@ -20,4 +20,9 @@
     <color name="green_trans">#8033D864</color>
     <color name="red">#DE2029</color>
     <color name="red_trans">#99DE2029</color>
+<<<<<<< Updated upstream
+=======
+    <color name="yellow">#FFF005</color>
+    <color name="orange">#DD571C</color>
+>>>>>>> Stashed changes
 </resources>

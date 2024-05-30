@@ -8,11 +8,14 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+<<<<<<< Updated upstream
 import android.util.Log;
+=======
+>>>>>>> Stashed changes
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private static final String PREF_COLOR_KEY = "color_scheme";
     private SharedPreferences sharedPreferences;
+    private CheckBox checkBox;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,35 +132,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
-
-        // Inicialização das preferências compartilhadas
         sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
+        boolean isDaltonismEnabled = AppPreferences.isDaltonismEnabled(this);
 
-        // Recuperar a preferência do esquema de cores
-        boolean isDefaultScheme = sharedPreferences.getBoolean(PREF_COLOR_KEY, true);
-
-        // Obter o item do menu e definir o estado inicial do checkbox
         MenuItem daltonismItem = navigationView.getMenu().findItem(R.id.daltonism);
-        View actionView = daltonismItem.getActionView();
-        CheckBox checkBox = actionView.findViewById(R.id.checkBox);
-        checkBox.setChecked(!isDefaultScheme);
+        checkBox = daltonismItem.getActionView().findViewById(R.id.checkBox);
+        checkBox.setChecked(isDaltonismEnabled);
 
-        // Define um listener para a checkbox
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // Salva a preferência ao alterar o estado da checkbox
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean(PREF_COLOR_KEY, !isChecked);
-                editor.apply();
-            }
+        checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            AppPreferences.setDaltonismEnabled(MainActivity.this, isChecked);
         });
     }
 
+<<<<<<< Updated upstream
     private boolean isDarkThemeActive() {
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
+=======
+
+>>>>>>> Stashed changes
 
     private void setBottomNavigationItemColor(int color) {
         bottomNavigationView.setItemIconTintList(ContextCompat.getColorStateList(this, color));
