@@ -3,11 +3,12 @@
     <style name="room_button" parent="Widget.MaterialComponents.Button">
         <item name="android:textSize">50dp</item>
         <item name="android:layout_margin">4dp</item>
-        <item name="android:layout_width">200dp</item>
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">70dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:onClick">enterRoom</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.Button.Rounded</item>
+
     </style>
 
     <style name="room_button_blanck" parent="Widget.MaterialComponents.Button">
@@ -61,5 +62,57 @@
     <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">40dp</item>
+    </style>
+
+    <style name="room_Imbutton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:layout_width">180dp</item>
+        <item name="android:layout_height">85dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/bg_default</item>
+        <item name="android:onClick">enterRoom</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.Button.Rounded</item>
+    </style>
+
+    <style name="room_Text" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">50dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.Button.Rounded</item>
+    </style>
+
+    <style name="data_room_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/rooms_textview_layout</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+
+    <style name="text_rooms">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans</item>
+    </style>
+
+    <style name="data_rooms">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans</item>
     </style>
 </resources>

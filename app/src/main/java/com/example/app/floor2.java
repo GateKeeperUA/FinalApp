@@ -3,17 +3,17 @@ package com.example.app;
 import static com.example.app.MainActivity.room;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.Calendar;
 
@@ -22,6 +22,7 @@ public class floor2 extends AppCompatActivity {
     ImageButton button;
     boolean view=true;
     boolean open;
+    ImageButton[] roomButtons;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,23 +62,13 @@ public class floor2 extends AppCompatActivity {
         });
 
 
-        Button room201 = findViewById(R.id.room201);
-        Button room202 = findViewById(R.id.room202);
-        Button room203 = findViewById(R.id.room203);
-        Button room204 = findViewById(R.id.room204);
-        Button room205 = findViewById(R.id.room205);
-        Button room206 = findViewById(R.id.room206);
-        Button room207 = findViewById(R.id.room207);
-        Button room208 = findViewById(R.id.room208);
-        Button room211 = findViewById(R.id.room211);
-        Button room214 = findViewById(R.id.room214);
-        Button room215 = findViewById(R.id.room215);
-        Button room216 = findViewById(R.id.room216);
-        Button room217 = findViewById(R.id.room217);
-        Button room220 = findViewById(R.id.room220);
-        Button room225 = findViewById(R.id.room225);
-        Button room227 = findViewById(R.id.room227);
-        Button room231 = findViewById(R.id.room231);
+        roomButtons = new ImageButton[]{
+                findViewById(R.id.room201), findViewById(R.id.room202), findViewById(R.id.room203), findViewById(R.id.room204),
+                findViewById(R.id.room205), findViewById(R.id.room206), findViewById(R.id.room207), findViewById(R.id.room208),
+                findViewById(R.id.room211), findViewById(R.id.room214), findViewById(R.id.room215), findViewById(R.id.room216),
+                findViewById(R.id.room217), findViewById(R.id.room220), findViewById(R.id.room225), findViewById(R.id.room227),
+                findViewById(R.id.room231)
+        };
 
         String currentTime = Calendar.getInstance().getTime().toString();
         Log.d("MQTT_Date",currentTime);
@@ -87,49 +78,42 @@ public class floor2 extends AppCompatActivity {
         int minute = Integer.parseInt(currentTime.substring(14,16));
         Log.d("MQTT_Date","Day "+day+" Hour "+hour+" Minute "+minute);
 
-        if(day.equals("Sat") || day.equals("Sun") || hour>=23 || (hour==22 && minute>=30) || (hour==20 && minute>=15 && minute<=45) || hour<8 || (hour==8 && minute<30)) {
-            room201.setBackgroundColor(getResources().getColor(R.color.red));
-            room202.setBackgroundColor(getResources().getColor(R.color.red));
-            room203.setBackgroundColor(getResources().getColor(R.color.red));
-            room204.setBackgroundColor(getResources().getColor(R.color.red));
-            room205.setBackgroundColor(getResources().getColor(R.color.red));
-            room206.setBackgroundColor(getResources().getColor(R.color.red));
-            room207.setBackgroundColor(getResources().getColor(R.color.red));
-            room208.setBackgroundColor(getResources().getColor(R.color.red));
-            room211.setBackgroundColor(getResources().getColor(R.color.red));
-            room214.setBackgroundColor(getResources().getColor(R.color.red));
-            room215.setBackgroundColor(getResources().getColor(R.color.red));
-            room216.setBackgroundColor(getResources().getColor(R.color.red));
-            room217.setBackgroundColor(getResources().getColor(R.color.red));
-            room220.setBackgroundColor(getResources().getColor(R.color.red));
-            room225.setBackgroundColor(getResources().getColor(R.color.red));
-            room227.setBackgroundColor(getResources().getColor(R.color.red));
-            room231.setBackgroundColor(getResources().getColor(R.color.red));
+        applyColorScheme();
+    }
 
-            open = false;
+    private void applyColorScheme() {
+        boolean isDaltonismEnabled = AppPreferences.isDaltonismEnabled(this);
+
+        Drawable bgOccupied;
+        Drawable bgFree;
+
+        if (isDaltonismEnabled) {
+
+            bgOccupied = ContextCompat.getDrawable(this, R.drawable.bg_daltonism_occupied); // Seu arquivo XML de textura de linhas
+            bgFree = ContextCompat.getDrawable(this, R.drawable.bg_daltonism_free); // Seu arquivo XML de textura de quadrado
+        } else {
+
+            bgOccupied = ContextCompat.getDrawable(this, R.drawable.bg_default_occupied);
+            bgFree = ContextCompat.getDrawable(this, R.drawable.bg_default_free);
         }
-        else {
-            room201.setBackgroundColor(getResources().getColor(R.color.green));
-            room202.setBackgroundColor(getResources().getColor(R.color.green));
-            room203.setBackgroundColor(getResources().getColor(R.color.green));
-            room204.setBackgroundColor(getResources().getColor(R.color.green));
-            room205.setBackgroundColor(getResources().getColor(R.color.green));
-            room206.setBackgroundColor(getResources().getColor(R.color.green));
-            room207.setBackgroundColor(getResources().getColor(R.color.green));
-            room208.setBackgroundColor(getResources().getColor(R.color.green));
-            room211.setBackgroundColor(getResources().getColor(R.color.green));
-            room214.setBackgroundColor(getResources().getColor(R.color.green));
-            room215.setBackgroundColor(getResources().getColor(R.color.green));
-            room216.setBackgroundColor(getResources().getColor(R.color.green));
-            room217.setBackgroundColor(getResources().getColor(R.color.green));
-            room220.setBackgroundColor(getResources().getColor(R.color.green));
-            room225.setBackgroundColor(getResources().getColor(R.color.green));
-            room227.setBackgroundColor(getResources().getColor(R.color.green));
-            room231.setBackgroundColor(getResources().getColor(R.color.green));
 
-            open = true;
+
+        String currentTime = Calendar.getInstance().getTime().toString();
+        String day = currentTime.substring(0, 3);
+        int hour = Integer.parseInt(currentTime.substring(11, 13));
+        int minute = Integer.parseInt(currentTime.substring(14, 16));
+
+        for (ImageButton button : roomButtons) {
+            if (day.equals("Sat") || day.equals("Sun") || hour >= 23 || (hour == 22 && minute >= 30) || (hour == 20 && minute >= 15 && minute <= 45) || hour < 8 || (hour == 8 && minute < 30)) {
+                button.setBackground(bgOccupied);
+
+            } else {
+                button.setBackground(bgFree);
+
+            }
         }
     }
+
 
     public void backmain(View view) {
         onBackPressed();
@@ -156,11 +140,31 @@ public class floor2 extends AppCompatActivity {
     }
 
     private void showDropdownMenu(View anchorView) {
+        boolean isDaltonismEnabled = AppPreferences.isDaltonismEnabled(this);
         // Inflate the dropdown menu layout
         View popupView = getLayoutInflater().inflate(R.layout.dropdown_menu_layout, null);
 
         // Create a PopupWindow with WRAP_CONTENT width and height
         PopupWindow popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        ImageView accessible = popupView.findViewById(R.id.Accessible);
+        ImageView notAccessible = popupView.findViewById(R.id.Not);
+
+        Drawable ddOccupied;
+        Drawable ddFree;
+
+        if (isDaltonismEnabled) {
+
+            ddOccupied = ContextCompat.getDrawable(this, R.drawable.dd_red_daltism); // Seu arquivo XML de textura de linhas
+            ddFree = ContextCompat.getDrawable(this, R.drawable.dd_green_daltism); // Seu arquivo XML de textura de quadrado
+        } else {
+
+            ddOccupied = ContextCompat.getDrawable(this, R.drawable.bg_default_occupied);
+            ddFree = ContextCompat.getDrawable(this, R.drawable.bg_default_free);
+        }
+
+        accessible.setBackground(ddFree);
+        notAccessible.setBackground(ddOccupied);
 
         // Set focusable and outside touchable to true to make it interactable
         popupWindow.setFocusable(true);

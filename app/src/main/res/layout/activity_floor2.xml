@@ -1,7 +1,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".floor2">
+
 
     <GridLayout
         android:layout_width="match_parent"
@@ -52,110 +55,228 @@
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room201"
-                android:text="201"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room202"
-                android:text="202"
-                style="@style/room_button" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room201"
+                    style="@style/room_Imbutton"/>
+
+                <TextView
+                    style="@style/room_Text"
+                    android:text="201"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room202"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="202"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room203"
-                android:text="203"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room204"
-                android:text="204"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room203"
+                    style="@style/room_Imbutton"/>
+
+                <TextView
+                    style="@style/room_Text"
+                    android:text="203"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room204"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="204"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room205"
-                android:text="205"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room206"
-                android:text="206"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room205"
+                    style="@style/room_Imbutton"/>
+
+                <TextView
+                    style="@style/room_Text"
+                    android:text="205"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room206"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="206"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room207"
-                android:text="207"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room208"
-                android:text="208"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room207"
+                    style="@style/room_Imbutton"/>
+
+                <TextView
+                    style="@style/room_Text"
+                    android:text="207"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room208"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="208"/>
+            </FrameLayout>
         </LinearLayout>
 
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room211"
-                android:text="211"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room214"
-                android:text="214"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room211"
+                    style="@style/room_Imbutton"/>
+
+                <TextView
+                    style="@style/room_Text"
+                    android:text="211"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room214"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="214"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room215"
-                android:text="215"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room216"
-                android:text="216"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room215"
+                    style="@style/room_Imbutton"/>
+
+                <TextView
+                    style="@style/room_Text"
+                    android:text="215"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room216"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="216"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room217"
-                android:text="217"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room220"
-                android:text="220"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room217"
+                    style="@style/room_Imbutton"/>
+
+                <TextView
+                    style="@style/room_Text"
+                    android:text="217"/>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room220"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="220"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room225"
-                android:text="225"
-                style="@style/room_button" />
-            <Button
-                android:id="@+id/room227"
-                android:text="227"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room225"
+                    style="@style/room_Imbutton" >
+                </ImageButton>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="225"/>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room227"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="227"/>
+            </FrameLayout>
         </LinearLayout>
 
         <LinearLayout
             style="@style/room_layout">
-            <Button
-                android:id="@+id/room231"
-                android:text="231"
-                style="@style/room_button" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/room231"
+                    style="@style/room_Imbutton"/>
+                <TextView
+                    style="@style/room_Text"
+                    android:text="231"/>
+            </FrameLayout>
             <TextView
                 android:backgroundTint="@color/white"
                 style="@style/room_button_blanck" />
         </LinearLayout>
+
     </GridLayout>
 </ScrollView>

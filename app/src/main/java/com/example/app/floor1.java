@@ -2,23 +2,19 @@ package com.example.app;
 
 import static com.example.app.MainActivity.room;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.PopupWindow;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.Calendar;
 
@@ -65,16 +61,16 @@ public class floor1 extends AppCompatActivity {
             }
         });
 
-        Button room101 = findViewById(R.id.room101);
-        Button room102 = findViewById(R.id.room102);
-        Button room104 = findViewById(R.id.room104);
-        Button room106 = findViewById(R.id.room106);
-        Button room118 = findViewById(R.id.room118);
-        Button room119 = findViewById(R.id.room119);
-        Button room123 = findViewById(R.id.room123);
-        Button room124 = findViewById(R.id.room124);
-        Button room128 = findViewById(R.id.room128);
-        Button room136 = findViewById(R.id.room136);
+        ImageButton room101 = findViewById(R.id.room101);
+        ImageButton room102 = findViewById(R.id.room102);
+        ImageButton room104 = findViewById(R.id.room104);
+        ImageButton room106 = findViewById(R.id.room106);
+        ImageButton room118 = findViewById(R.id.room118);
+        ImageButton room119 = findViewById(R.id.room119);
+        ImageButton room123 = findViewById(R.id.room123);
+        ImageButton room124 = findViewById(R.id.room124);
+        ImageButton room128 = findViewById(R.id.room128);
+        ImageButton room136 = findViewById(R.id.room136);
 
         String currentTime = Calendar.getInstance().getTime().toString();
         Log.d("MQTT_Date",currentTime);
@@ -84,31 +80,48 @@ public class floor1 extends AppCompatActivity {
         int minute = Integer.parseInt(currentTime.substring(14,16));
         Log.d("MQTT_Date","Day "+day+" Hour "+hour+" Minute "+minute);
 
+        boolean isDaltonismEnabled = AppPreferences.isDaltonismEnabled(this);
+
+        Drawable bgOccupied;
+        Drawable bgFree;
+        Drawable bdCard = getDrawable(R.drawable.bg_default);
+
+        if (isDaltonismEnabled) {
+
+            bgOccupied = ContextCompat.getDrawable(this, R.drawable.bg_daltonism_occupied); // Seu arquivo XML de textura de linhas
+            bgFree = ContextCompat.getDrawable(this, R.drawable.bg_daltonism_free); // Seu arquivo XML de textura de quadrado
+        } else {
+
+            bgOccupied = ContextCompat.getDrawable(this, R.drawable.bg_default_occupied);
+            bgFree = ContextCompat.getDrawable(this, R.drawable.bg_default_free);
+        }
+
+
         if(day.equals("Sat") || day.equals("Sun") || hour>=23 || (hour==22 && minute>=30) || (hour==20 && minute>=15 && minute<=45) || hour<8 || (hour==8 && minute<30)) {
-            room101.setBackgroundColor(getResources().getColor(R.color.red));
-            room102.setBackgroundColor(getResources().getColor(R.color.red));
-            room104.setBackgroundColor(getResources().getColor(R.color.red));
-            room106.setBackgroundColor(getResources().getColor(R.color.red));
-            room118.setBackgroundColor(getResources().getColor(R.color.azure));
-            room119.setBackgroundColor(getResources().getColor(R.color.azure));
-            room123.setBackgroundColor(getResources().getColor(R.color.azure));
-            room124.setBackgroundColor(getResources().getColor(R.color.azure));
-            room128.setBackgroundColor(getResources().getColor(R.color.azure));
-            room136.setBackgroundColor(getResources().getColor(R.color.azure));
+            room101.setBackground(bgOccupied);
+            room102.setBackground(bgOccupied);
+            room104.setBackground(bgOccupied);
+            room106.setBackground(bgOccupied);
+            room118.setBackground(bdCard);
+            room119.setBackground(bdCard);
+            room123.setBackground(bdCard);
+            room124.setBackground(bdCard);
+            room128.setBackground(bdCard);
+            room136.setBackground(bdCard);
 
             open = false;
         }
         else {
-            room101.setBackgroundColor(getResources().getColor(R.color.green));
-            room102.setBackgroundColor(getResources().getColor(R.color.green));
-            room104.setBackgroundColor(getResources().getColor(R.color.green));
-            room106.setBackgroundColor(getResources().getColor(R.color.green));
-            room118.setBackgroundColor(getResources().getColor(R.color.green));
-            room119.setBackgroundColor(getResources().getColor(R.color.green));
-            room123.setBackgroundColor(getResources().getColor(R.color.green));
-            room124.setBackgroundColor(getResources().getColor(R.color.green));
-            room128.setBackgroundColor(getResources().getColor(R.color.green));
-            room136.setBackgroundColor(getResources().getColor(R.color.green));
+            room101.setBackground(bgFree);;
+            room102.setBackground(bgFree);
+            room104.setBackground(bgFree);
+            room106.setBackground(bgFree);
+            room118.setBackground(bgFree);
+            room119.setBackground(bgFree);
+            room123.setBackground(bgFree);
+            room124.setBackground(bgFree);
+            room128.setBackground(bgFree);
+            room136.setBackground(bgFree);
 
             open = true;
         }
@@ -140,11 +153,31 @@ public class floor1 extends AppCompatActivity {
     }
 
     private void showDropdownMenu(View anchorView) {
+        boolean isDaltonismEnabled = AppPreferences.isDaltonismEnabled(this);
         // Inflate the dropdown menu layout
         View popupView = getLayoutInflater().inflate(R.layout.dropdown_menu_layout, null);
 
         // Create a PopupWindow with WRAP_CONTENT width and height
         PopupWindow popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        ImageView accessible = popupView.findViewById(R.id.Accessible);
+        ImageView notAccessible = popupView.findViewById(R.id.Not);
+
+        Drawable ddOccupied;
+        Drawable ddFree;
+
+        if (isDaltonismEnabled) {
+
+            ddOccupied = ContextCompat.getDrawable(this, R.drawable.dd_red_daltism); // Seu arquivo XML de textura de linhas
+            ddFree = ContextCompat.getDrawable(this, R.drawable.dd_green_daltism); // Seu arquivo XML de textura de quadrado
+        } else {
+
+            ddOccupied = ContextCompat.getDrawable(this, R.drawable.bg_default_occupied);
+            ddFree = ContextCompat.getDrawable(this, R.drawable.bg_default_free);
+        }
+
+        accessible.setBackground(ddFree);
+        notAccessible.setBackground(ddOccupied);
 
         // Set focusable and outside touchable to true to make it interactable
         popupWindow.setFocusable(true);
