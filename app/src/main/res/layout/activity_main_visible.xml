@@ -39,7 +39,7 @@
             app:itemIconTint="@color/grey"
             app:itemTextColor="@color/grey"
             app:labelVisibilityMode="labeled"
-            app:menu="@menu/bottom_menu"/>
+            app:menu="@menu/bottom_menu" />
 
 
     </RelativeLayout>

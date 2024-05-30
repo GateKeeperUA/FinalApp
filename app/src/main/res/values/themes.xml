@@ -12,9 +12,28 @@
     <style name="Theme.GateKeeper" parent="Base.Theme.GateKeeper" >
     </style>
 
+    <style name="BOTTOM_HOME">
+        <item name="android:iconTint">@color/grey</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="BACKGROUND_BLACK">
+        <item name="android:background">@color/black</item>
+    </style>
+
     <style name="ThemeOverlay.AppCompat.navTheme">
         <item name="colorPrimary">@color/azure</item>
     </style>
+
+    <style name="TEXT_COLOR">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="NFC_Borda">
+        <item name="colorPrimaryVariant">@color/black</item>
+    </style>
+
+
     <style name="Widget" />
 
     <style name="Widget.SampleMessage">

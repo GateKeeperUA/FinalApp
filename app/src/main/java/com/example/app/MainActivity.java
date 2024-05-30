@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
@@ -29,7 +29,16 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+import java.util.Random;
 import java.util.concurrent.Executor;
+
+
+import android.content.res.Configuration;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static String room;
@@ -38,7 +47,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     BottomNavigationView bottomNavigationView;
     BiometricPrompt biometricPrompt;
     BiometricPrompt.PromptInfo promptInfo;
-    public static boolean nfc_discovered = false;
+
+    public static boolean nfc_discovered=false;
+    public static MqttClient client;
+
     private static final String PREF_COLOR_KEY = "color_scheme";
     private SharedPreferences sharedPreferences;
 
@@ -46,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (!entered) {
+
+        if(!entered) {
             setContentView(R.layout.activity_main);
             Biometric(true);
             entered = true;
@@ -83,17 +96,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (item.getItemId() == R.id.home) {
                     selectedFragment = new HomeFragment();
                     item.setIcon(R.drawable.nav_home);
+
+                    try {
+                        client.disconnect();
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
                 } else if (item.getItemId() == R.id.shorts) {
                     selectedFragment = new nfcFragment();
                     item.setIcon(R.drawable.nav_lock);
                 }
 
                 // Verifica se o fragmento selecionado é o que precisa da mudança de cor
+
                 if (selectedFragment instanceof nfcFragment) {
                     setBottomNavigationItemColor(R.color.white); // Define a cor especificada
                 } else {
-                    // Define a cor padrão se não for o fragmento específico
-                    setBottomNavigationItemColor(R.color.grey);
+                    if (isDarkThemeActive()) {
+                        setBottomNavigationItemColor(R.color.black_trans); // Tema escuro: cor vermelha
+                    } else {
+                        setBottomNavigationItemColor(R.color.grey); // Tema claro: cor cinza
+                    }
                 }
 
                 // Troca para o fragmento selecionado
@@ -127,6 +150,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 editor.apply();
             }
         });
+    }
+
+    private boolean isDarkThemeActive() {
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
 
     private void setBottomNavigationItemColor(int color) {

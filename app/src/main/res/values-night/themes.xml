@@ -10,7 +10,54 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-    <style name="Theme.GateKeeper" parent="Base.Theme.GateKeeper" />
+    <style name="Theme.GateKeeper" parent="Base.Theme.GateKeeper" >
+    </style>
+
+
+    <style name="ThemeOverlay.AppCompat.navTheme">
+
+        <item name="colorPrimary">@color/azure</item>
+    </style>
+
+    <style name="TEXT_COLOR">
+        <item name="android:textColor">@color/azure</item>
+    </style>
+
+    <style name="BACKGROUND">
+        <item name="android:background">@color/grey_trans</item>
+    </style>
+
+    <style name="BACKGROUND_BLACK">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="BOTTOM_HOME">
+        <item name="android:iconTint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget" />
+
+    <style name="Widget.SampleMessage">
+
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="ACTION_BUTTON">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="NFC_BUTTON">
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="Widget.SampleMessageTile">
+        <item name="android:shadowColor">#7F000000</item>
+        <item name="android:shadowDy">-3.5</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
 
     <style name="AppTheme.ToolbarFont" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="android:textColorPrimary">@color/azure</item>
@@ -20,4 +67,6 @@
         <item name="android:fontFamily">@font/baumans_regular</item>
     </style>
 
+
 </resources>
+
