@@ -106,10 +106,11 @@ public class floor2 extends AppCompatActivity {
         for (ImageButton button : roomButtons) {
             if (day.equals("Sat") || day.equals("Sun") || hour >= 23 || (hour == 22 && minute >= 30) || (hour == 20 && minute >= 15 && minute <= 45) || hour < 8 || (hour == 8 && minute < 30)) {
                 button.setBackground(bgOccupied);
+                open = false;
 
             } else {
                 button.setBackground(bgFree);
-
+                open = true;
             }
         }
     }
