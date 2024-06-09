@@ -75,7 +75,7 @@ public class nfcFragment extends Fragment{
                     countDownTimer.cancel();
                 }
 
-                startTimer(2000);
+                startTimer(3000);
             }
         });
 
